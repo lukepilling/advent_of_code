@@ -3,6 +3,7 @@ library(tidyverse)
 
 input <- read_tsv("01.input.txt", col_names = FALSE)
 
+# part 1
 output = input |> mutate(
   n1 = gsub("\\D", "", X1),   # strip non-integer characters
   n2 = as.numeric( case_when( # convert result to numeric
@@ -12,3 +13,7 @@ output = input |> mutate(
 )
 
 sum(output$n2)
+
+# part 2
+input <- read_tsv("01_2.example.txt", col_names = FALSE)
+
